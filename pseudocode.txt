@@ -1,0 +1,3 @@
+Get the username typed by the user
+Get the password typed by the user
+Check both 
