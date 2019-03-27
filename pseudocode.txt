@@ -1,3 +1,94 @@
-Get the username typed by the user
-Get the password typed by the user
-Check both 
+1. Login
+Get the email typed by the user
+Get the password typed by the use
+If password less than 8 char
+Print out “Your password less than 8 character”
+
+Check both email and password in mysql database
+If both match
+Start session and go to homepage
+Else if email and password don’t match.
+Print out “your password and email is incorrect”
+Else if email matches but password doesn’t match.
+Print out “your password is incorrect”
+Else if password matches but email doesn’t match.
+Print out “your email is incorrect”’
+
+2. Logout
+If ‘Logout’ Clicked
+Redirect to homepage
+
+3. Forgot Password
+If ‘Click Here’ Clicked
+Redirect to forgotpasswordPage
+Get the email by the user
+Check the email in mysql database
+If match
+Send an forgotpasswordEmail to the user’s email.
+Else if email doesn’t match
+Print out “the email you entered is not registered”
+
+4. Setup Profile (Register)
+Get photo upload by user
+Get name typed by the user
+Select gender by user
+Get address typed by the user
+Get name province typed by the user
+Get city typed by the user
+Get district typed by the user
+Get email typed by the user
+Get password typed by the user
+
+if the password less than 8 character
+Print out “Your password less than 8 character”
+If ‘DONE’ Clicked
+Redirect to homepage
+
+5. EditProfile
+Get photo upload by user
+Get name typed by the user
+Select gender by user
+Get address typed by the user
+Get name province typed by the user
+Get city typed by the user
+Get district typed by the user
+Get email typed by the user
+Get password typed by the user
+If ‘DONE’ Clicked
+Redirect to homepage
+
+6. Search Item
+Get the name of item typed by the user
+if ‘Search’ Clicked
+Redirect to the page that contains the item you were looking for
+
+7. Edit Item
+Get item photo by user
+Get item name by user
+Get item description by user
+Get item condition by user
+Get item category by user
+Get item weight by user
+Get item price by user
+if ‘Sell’ clicked
+redirect to page “Jualan Saya”
+
+8. Upload Item
+Get item photo by user
+Get item name by user
+Get item description by user
+Get item condition by user
+Get item category by user
+Get item weight by user
+Get item price by user
+if ‘Sell’ clicked
+redirect to page “Jualan Saya”
+
+9. Delete Item
+if ‘Delete Barang’ Clicked
+Remove the Item
+Redirect to page “Jualan Saya”
+
+10. Display Item
+if ‘Beli’ Clicked
+Redirect to page “Deskripsi Barang”
