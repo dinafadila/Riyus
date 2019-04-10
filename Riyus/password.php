@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Masuk</title>
+	<title>Lupa kata sandi</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -32,7 +32,7 @@
 
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
-						Masuk
+						Lupa kata sandi
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -43,35 +43,13 @@
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Kata sandi">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-					</div>
 					
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Masuk
+							Kirim 
 						</button>
 					</div>
 
-					<div class="text-center p-t-12">
-						<span class="txt1">
-							Lupa
-						</span>
-						<a class="txt2" href="password.php">
-							kata sandi?
-						</a>
-					</div>
-
-					<div class="text-center p-t-136">
-						<a class="txt2" href="signup.php">
-							Buat Akun
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
 				</form>
 			</div>
 		</div>
