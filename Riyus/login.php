@@ -19,18 +19,24 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
 <!--===============================================================================================-->
 </head>
 <body>
 	
 	<div class="limiter">
 		<div class="container-login100">
+		
+		
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="img/signin-image.jpg" alt="IMG">
+					<img src="img/signin-01.svg" alt="IMG">
 				</div>
+				
+				
 
 				<form class="login100-form validate-form">
+				
 					<span class="login100-form-title">
 						Masuk
 					</span>
@@ -51,11 +57,9 @@
 						</span>
 					</div>
 					
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Masuk
-						</button>
-					</div>
+					<button class="container-login100-form-btn">
+						<a href="beranda.php" class="login100-form-btn">Masuk</a>	
+					</button>
 
 					<div class="text-center p-t-12">
 						<span class="txt1">
