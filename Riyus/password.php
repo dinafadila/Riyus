@@ -27,7 +27,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="img/signin-image.jpg" alt="IMG">
+					<img src="img/password-01.svg" alt="IMG">
 				</div>
 
 				<form class="login100-form validate-form">
@@ -45,10 +45,12 @@
 
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Kirim 
-						</button>
+						
+						<a href="forgot.php" class="login100-form-btn">Kirim</a>
+							
 					</div>
+
+					
 
 				</form>
 			</div>

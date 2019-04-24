@@ -50,9 +50,17 @@
         <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
 
-      <nav class="main-nav float-right d-none d-lg-block">
+     <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li><a href="#footer">Kontak Kami</a></li>
+          
+          
+          <li class="drop-down"><a href=""><i class="fa fa-person" aria-hidden="true"></i></a>
+            <ul>
+              <li><a href="#">Edit Profile</a></li>
+              <li><a href="index.php">Keluar</a></li>
+            </ul>
+          </li>
+          <li><a href="#footer">KONTAK KAMI</a></li>
         </ul>
       </nav><!-- .main-nav -->
       
@@ -68,14 +76,13 @@
         <div class="col-md-6 intro-info order-md-first order-last">
           <h2>Riyus<br>Tidak ada <span>yang setia seperti buku</span></h2>
           <div>
-            <a href="login.php" class="btn-get-started scrollto">Masuk</a>
-            <a href="signup.php" class="btn-get-started scrollto">Buat Akun</a>
-            <a href="beranda/index.php" class="btn-get-started scrollto">Beli</a>
+            <a href="jualan.php" class="btn-get-started scrollto">Jualan Saya</a>
+            <a href="beli.php" class="btn-get-started scrollto">Beli</a>
           </div>
         </div>
   
         <div class="col-md-6 intro-img order-md-last order-first">
-          <img src="img/intro-img-01.svg" alt="" class="img-fluid">
+          <img src="img/beranda-01.svg" alt="" class="img-fluid">
         </div>
       </div>
 
