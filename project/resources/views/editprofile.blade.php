@@ -37,15 +37,22 @@
 
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post" action="/editprofile/update/{{ $user->id }}">
 					<span class="login100-form-title">
 						Sunting Akun
 					</span>
 
+					{{ csrf_field() }}
+                    {{ method_field('PUT') }}
 					
 			
 					<div class="wrap-input100 validate-input" data-validate = "Name is required">
-						<input class="input100" type="text" name="nama" placeholder="Nama">
+						<input class="input100" type="text" name="nama" placeholder="Nama" value=" {{ $user->name }}">
+						@if($errors->has('name'))
+                                <div class="text-danger">
+                                    {{ $errors->first('name')}}
+                                </div>
+                            @endif
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
@@ -53,7 +60,12 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" name="email" placeholder="Email" value="{{$user->email}}">
+						@if($errors->has('email'))
+                                <div class="text-danger">
+                                    {{ $errors->first('email')}}
+                                </div>
+                            @endif
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -61,7 +73,12 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Kata sandi">
+						<input class="input100" type="password" name="pass" placeholder="Kata sandi Baru" value="{{ $user->password }}">
+						@if($errors->has('password'))
+                                <div class="text-danger">
+                                    {{ $errors->first('password')}}
+                                </div>
+                            @endif 
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i> <!-- buat simbolnya -->
@@ -69,7 +86,12 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Ulangi Kata sandi">
+						<input class="input100" type="password" name="pass" placeholder="Kata sandi Baru" value="{{ $user->password }}">
+						@if($errors->has('password'))
+                                <div class="text-danger">
+                                    {{ $errors->first('password')}}
+                                </div>
+                            @endif 
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i> <!-- buat simbolnya -->
@@ -77,7 +99,12 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Phone number is required">
-						<input class="input100" type="text" name="phone" placeholder="Nomor Ponsel">
+						<input class="input100" type="text" name="phone" placeholder="Nomor Ponsel" value="{{$user->phone}}">
+							@if($errors->has('phone'))
+                                <div class="text-danger">
+                                    {{ $errors->first('phone')}}
+                                </div>
+                            @endif 
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-phone" aria-hidden="true"></i>
@@ -85,7 +112,12 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Address is required">
-						<input class="input100" type="text" name="address" placeholder="Alamat">
+						<input class="input100" type="text" name="address" placeholder="Alamat" value="{{$user->address}}">
+							@if($errors->has('address'))
+                                <div class="text-danger">
+                                    {{ $errors->first('address')}}
+                                </div>
+                            @endif 
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-home" aria-hidden="true"></i>

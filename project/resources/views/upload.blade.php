@@ -47,7 +47,7 @@
                         name="nama_buku" value="{{ old('nama_buku') }}" required autofocus>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-user" aria-hidden="true"></i>
+							<i class="fa fa-book" aria-hidden="true"></i>
 						</span>
                         @if ($errors->has('nama_buku'))
                                 <span class="invalid-feedback" role="alert">
@@ -62,7 +62,7 @@
                         name="harga" value="{{ old('harga') }}" required autofocus>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-user" aria-hidden="true"></i>
+							<i class="fa fa-money" aria-hidden="true"></i>
 						</span>
                         @if ($errors->has('harga'))
                                 <span class="invalid-feedback" role="alert">
@@ -77,7 +77,7 @@
                         name="deskripsi" value="{{ old('deskripsi') }}" required autofocus>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-user" aria-hidden="true"></i>
+							<i class="fa fa-pencil" aria-hidden="true"></i>
 						</span>
                         @if ($errors->has('deskripsi'))
                                 <span class="invalid-feedback" role="alert">
@@ -93,7 +93,7 @@
                         name="nomor_telepon" value="{{ old('nomor_telepon') }}" required autofocus>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-nomor_telepon" aria-hidden="true"></i>
+							<i class="fa fa-phone" aria-hidden="true"></i>
 						</span>
 
                         @if ($errors->has('nomor_telepon'))
