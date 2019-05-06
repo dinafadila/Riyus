@@ -33,10 +33,6 @@ Route::get('/password', function () {  //inituh buat forgot password
     return view('password');
 });
 
-Route::get('/beranda', function () {
-    return view('beranda');
-});
-
 Route::get('/display', function () {
     return view('display');
 });
@@ -59,10 +55,6 @@ Route::get('/beli', function () {
 
 Route::get('/editbuku', function () {
     return view('editbuku');
-});
-
-Route::get('/editprofile', function () {
-    return view('editprofile');
 });
 
 Route::get('/masuk/loginsuccess', function () {

@@ -37,7 +37,7 @@
 
 				</div>
 				
-				<form class="login100-form validate-form" method="post" action="/editprofile/update/{{ $user->id }}">
+				<form class="login100-form validate-form" method="post" action="/editprofile/update/{$id}">
 					<span class="login100-form-title">
 						Sunting Akun
 					</span>
@@ -45,9 +45,10 @@
 					{{ csrf_field() }}
                     {{ method_field('PUT') }}
 					
-			
+					<input type="text" name="id" value="{{$usr->id}}">
+
 					<div class="wrap-input100 validate-input" data-validate = "Name is required">
-						<input class="input100" type="text" name="nama" placeholder="Nama" value=" {{ $user->name }}">
+						<input class="input100" type="text" name="name" placeholder="Nama" value=" {{ $usr->name }}">
 						@if($errors->has('name'))
                                 <div class="text-danger">
                                     {{ $errors->first('name')}}
@@ -60,7 +61,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email" value="{{$user->email}}">
+						<input class="input100" type="text" name="email" placeholder="Email" value="{{$usr->email}}">
 						@if($errors->has('email'))
                                 <div class="text-danger">
                                     {{ $errors->first('email')}}
@@ -72,34 +73,8 @@
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Kata sandi Baru" value="{{ $user->password }}">
-						@if($errors->has('password'))
-                                <div class="text-danger">
-                                    {{ $errors->first('password')}}
-                                </div>
-                            @endif 
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i> <!-- buat simbolnya -->
-						</span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Kata sandi Baru" value="{{ $user->password }}">
-						@if($errors->has('password'))
-                                <div class="text-danger">
-                                    {{ $errors->first('password')}}
-                                </div>
-                            @endif 
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i> <!-- buat simbolnya -->
-						</span>
-					</div>
-
 					<div class="wrap-input100 validate-input" data-validate = "Phone number is required">
-						<input class="input100" type="text" name="phone" placeholder="Nomor Ponsel" value="{{$user->phone}}">
+						<input class="input100" type="text" name="phone" placeholder="Nomor Ponsel" value="{{$usr->phone}}">
 							@if($errors->has('phone'))
                                 <div class="text-danger">
                                     {{ $errors->first('phone')}}
@@ -112,7 +87,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Address is required">
-						<input class="input100" type="text" name="address" placeholder="Alamat" value="{{$user->address}}">
+						<input class="input100" type="text" name="address" placeholder="Alamat" value="{{$usr->address}}">
 							@if($errors->has('address'))
                                 <div class="text-danger">
                                     {{ $errors->first('address')}}
@@ -128,7 +103,7 @@
 					
 					<div class="container-login100-form-btn">
 						
-						<a href="{{ url('/beranda') }}" class="login100-form-btn">Simpan</a>
+						<button type="submit" class="login100-form-btn">Simpan</a>
 							
 					</div>
 
