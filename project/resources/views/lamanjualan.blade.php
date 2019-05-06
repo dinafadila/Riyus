@@ -25,13 +25,12 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style-01.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-
 
   <!-- Custom-Files -->
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrapbeli.css">
+  <link rel="stylesheet" href="css/agency.css">
     <!-- Bootstrap-Core-CSS -->
-    <link rel="stylesheet" href="css/stylee.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/stylebeli.css" type="text/css" media="all" />
 
   
 
@@ -42,7 +41,7 @@
   <!--==========================Header============================-->
   <header id="header">
 
-    <div id="topbar">
+  <div id="topbar">
       <div class="container">
         <div class="social-links">
           <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
@@ -61,78 +60,82 @@
 
      <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          
-          
-          <li class="drop-down"><a href=""><i class="fa fa-person" aria-hidden="true"></i></a>
-            <ul>
-              
-                
-                
+          <li><a href="#footer">KONTAK KAMI</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
       
-    </div> 
+    </div>
   </header><!-- #header -->
 
   <!--==========================
     Intro Section
   ============================-->
+  <section id="intro">
+    <div class="container d-flex h-100">
+      <div class="row justify-content-center align-self-center">
+        <div class="col-md-6 intro-info order-md-first order-last">
+          <h2>Riyus<br>Tidak ada <span>yang setia seperti buku</span></h2>
+        </div>
   
+        <div class="col-md-6 intro-img order-md-last order-first">
+          <img src="img/beli-01.svg" alt="" class="img-fluid">
+        </div>
+      </div>
 
- 
-                <!-- //product left -->
-                <!-- product right -->
+    </div>
+  </section><!-- #intro -->
 
-                <section class="content">
-                  <div class="container">
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-        <div class="lapak text-left">
+                
+  <div id="example1" class="row">
+                <div class="container py-md-3">
         <h3 class="midnight-city text-uppercase text-left">
           <strong>Nama Penjual</strong>
         </h3>
               <h4 class="midnight-city text-uppercase text-left">
                 Lokasi Penjual			</h4>
-                </div>
+                
                 <div class="uploadbox text-right">
                 <h3 class="midnight-city text-uppercase text-right">
                   <a href="{{ url('/upload') }}" class="btn-get-started scrollto">
                   <strong>TAMBAH BARANG</strong></a>
                 </h3>
-
-                </div>
-    </section>
-    <!--=========Data Jualan=========-->
-    <section >
-    <div id="example1" class="row">
-    <div class="container py-md-3">
-    <div class="left-ads-display col-lg-12"> 
-                         @foreach($item as $p)                            
-                                      <div class="col-md-3 product-men">
-                                          <div class="product-shoe-info shoe text-center">
-                                              <div class="men-thumb-item">
-                                                  {{$p->file}}
-                                              </div>
-                                              <div class="item-info-product">
-                                                  <h4>
-                                                      {{$p->nama_buku}}
-                                                  </h4>
+              </div>
               
-                                                  <div class="product_price">
-                                                      <div class="grid-price">
-                                                      <span class="editbuku"><a href="{{ url('/editbuku') }}">Edit</a></span>
-                                                      </div>                                                                                                   
-                                              </div>
-                                          </div>
-                                      </div>
-                                  
-                          @endforeach
+  <!--================Data Jual=====================-->
+
+  <section >
+  <div id="example1" class="row">
+        @foreach($item->all() as $i)
+        
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 portfolio-item">
+            <div class="card h-100" >
+              <div class="img-frame center">
+              <a href="/"><img class="card-img-top img-responsive img-cover" src="{{url('/data_file')}}/{{ $i->file }}" alt=""></a>
+              
+            </div>
+              <div class="card-body">
+               </a>
+                  <table id="example1">
+                    <tr>
+                     <td><a href="/"> <font size=2 class="card-title text-dark"> <b> {{str_limit($i->nama_buku, 70, '...')}} </b></font></a></td>
+                   </tr>
+                      <tr>
+                          <td><font size=1 class="text-muted">{{$i->harga}}</font></td>
+                        </tr> 
+                  </table>
+              </div>
+            </div>
+          </div>
+      
+        @endforeach  
+      
+    </div>
     <!----=========================================================-->
     
                     </section>
+          
                     
+    
   <!--==========================
     Footer
   ============================-->
@@ -220,6 +223,8 @@
 
       </div>
     </div>
+    </div>
+                </div>
 
   
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
@@ -246,3 +251,4 @@
 
 </body>
 </html>
+

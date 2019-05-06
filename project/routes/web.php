@@ -99,5 +99,5 @@ Route::post('/lamanjualan', 'UploadController@proses_upload');
 Route::get('/lamanjualan', 'ItemController@index');
 Route::get('/beli', 'ItemController@beli');
 
-Route::get('editprofile/edit/{id}', 'UserController@edit');
-Route::put('/edit/{id}', 'UserController@update');
+Route::get('/editprofile/edit/{id}', 'UserController@edit');
+Route::put('/editprofile/update/{id}', 'UserController@update');

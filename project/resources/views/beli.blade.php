@@ -107,7 +107,7 @@
           <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 portfolio-item">
             <div class="card h-100" >
               <div class="img-frame center">
-              <a href="/"><img class="card-img-top img-responsive img-cover" src="{{ $i->file }}" alt=""></a>
+              <a href="/"><img class="card-img-top img-responsive img-cover" src="{{url('/data_file')}}/{{ $i->file }}" alt=""></a>
               
             </div>
               <div class="card-body">

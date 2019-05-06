@@ -36,7 +36,7 @@
 					</div>
 
 				</div>
-
+				
 				<form class="login100-form validate-form" method="post" action="/editprofile/update/{{ $user->id }}">
 					<span class="login100-form-title">
 						Sunting Akun
@@ -138,6 +138,7 @@
 						</a>
 					</div>
 				</form>
+				
 			</div>
 		</div>
 	</div>

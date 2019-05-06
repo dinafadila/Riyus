@@ -9,8 +9,8 @@ class UserController extends Controller
 {
     public function edit($id)
 {
-   $user = User::find($id);
-   return view('editprofile', ['users' => $user]);
+    $user = Auth::find($id);
+    return view('editprofile', compact('user'));
 }
 
 
