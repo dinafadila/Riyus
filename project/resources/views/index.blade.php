@@ -31,7 +31,22 @@
 
 <body>
   <!--==========================Header============================-->
-  <header id="header">
+ 
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="container d-flex h-100">
+      <div class="row justify-content-center align-self-center">
+        <div class="col-md-6 intro-info order-md-first order-last">
+          <h2>Riyus<br>Tidak ada <span>yang setia seperti buku</span></h2>
+          
+          <div>
+           @if (Route::has('login'))
+            @auth
+            <a href="/home" class="btn-get-started scrollto">Beranda</a>
+            <header id="header">
 
     <div id="topbar">
       <div class="container">
@@ -46,31 +61,90 @@
 
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <h1 class="text-light"><a href="#intro" class="scrollto"><span>Riyus</span></a></h1>
+        <h1 class="text-light"><a href="/" class="scrollto"><span>Riyus</span></a></h1>
         <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
 
-      <nav class="main-nav float-right d-none d-lg-block">
+     <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li><a href="#footer">Kontak Kami</a></li>
+          
+          
+          <li class="drop-down"><a href=""><i class="fa fa-person" aria-hidden="true"></i></a>
+            <ul>
+              
+                
+                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <li><a href="{{ url('/editprofile') }}">Edit Profile</a></li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                        
+                                    </form>
+                                    
+                                </div>
+                            </li>
+              
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            </form> 
+              </a>
+              
+              
+              
+              
+              
+              </li>
+            </ul>
+          </li>
+          <li><a href="#footer">KONTAK KAMI</a></li>
         </ul>
       </nav><!-- .main-nav -->
       
     </div>
   </header><!-- #header -->
+            @else
+            <header id="header">
 
-  <!--==========================
-    Intro Section
-  ============================-->
-  <section id="intro">
-    <div class="container d-flex h-100">
-      <div class="row justify-content-center align-self-center">
-        <div class="col-md-6 intro-info order-md-first order-last">
-          <h2>Riyus<br>Tidak ada <span>yang setia seperti buku</span></h2>
-          <div>
-            <a href="{{ route('login') }}" class="btn-get-started scrollto">Masuk</a>
-            <a href="#" class="btn-get-started scrollto">Buat Akun</a>
-            <a href="beranda/index.php" class="btn-get-started scrollto">Beli</a>
+<div id="topbar">
+    <div class="container">
+      <div class="social-links">
+        <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="http://instagram.com" class="instagram"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="logo float-left">
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <h1 class="text-light"><a href="/" class="scrollto"><span>Riyus</span></a></h1>
+      <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
+    </div>
+
+   <nav class="main-nav float-right d-none d-lg-block">
+      <ul>
+        <li><a href="#footer">KONTAK KAMI</a></li>
+      </ul>
+    </nav><!-- .main-nav -->
+    
+  </div>
+</header><!-- #header -->
+              <a href="{{ route('login') }}" class="btn-get-started scrollto">Masuk</a>
+              @if (Route::has('register'))
+              <a href="{{ route('register') }}" class="btn-get-started scrollto">Buat Akun</a>
+              <a href="{{ url('beli')}}" class="btn-get-started scrollto">Beli</a>
+              @endif
+            @endauth
+          @endif
           </div>
         </div>
   

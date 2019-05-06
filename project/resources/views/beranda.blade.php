@@ -33,7 +33,8 @@
   <!--==========================Header============================-->
   <header id="header">
 
-    <div id="topbar">
+  <header id="header">
+<div id="topbar">
       <div class="container">
         <div class="social-links">
           <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
@@ -46,7 +47,7 @@
 
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <h1 class="text-light"><a href="#intro" class="scrollto"><span>Riyus</span></a></h1>
+        <h1 class="text-light"><a href="/" class="scrollto"><span>Riyus</span></a></h1>
         <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
 
@@ -56,8 +57,37 @@
           
           <li class="drop-down"><a href=""><i class="fa fa-person" aria-hidden="true"></i></a>
             <ul>
-              <li><a href="#">Edit Profile</a></li>
-              <li><a href="index.php">Keluar</a></li>
+              
+                
+                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <li><a href="{{ url('/editprofile') }}">Edit Profile</a></li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                        
+                                    </form>
+                                    
+                                </div>
+                            </li>
+              
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            </form> 
+              </a>
+              
+              
+              
+              
+              
+              </li>
             </ul>
           </li>
           <li><a href="#footer">KONTAK KAMI</a></li>
@@ -65,6 +95,7 @@
       </nav><!-- .main-nav -->
       
     </div>
+	</header>
   </header><!-- #header -->
 
   <!--==========================
@@ -76,8 +107,8 @@
         <div class="col-md-6 intro-info order-md-first order-last">
           <h2>Riyus<br>Tidak ada <span>yang setia seperti buku</span></h2>
           <div>
-            <a href="jualan.php" class="btn-get-started scrollto">Jualan Saya</a>
-            <a href="beli.php" class="btn-get-started scrollto">Beli</a>
+            <a href="{{ ('lamanjualan') }}" class="btn-get-started scrollto">Jualan Saya</a>
+            <a href="{{ ('beli')}}" class="btn-get-started scrollto">Beli</a>
           </div>
         </div>
   

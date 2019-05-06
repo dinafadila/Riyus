@@ -30,48 +30,81 @@
 		
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="img/signin-01.svg" alt="IMG">
+					<a href="/">
+						<img src="img/signin-01.svg" alt="IMG">
+					</a>
 				</div>
 				
 				
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form"
+					method="POST" action="{{ route('login')}}">
+					@csrf
 				
 					<span class="login100-form-title">
 						Masuk
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+					<input class="input100" id="email" type="email" placeholder="Email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" 
+					name="email" value="{{ old('email') }}" required autofocus >
+
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
+						@if ($errors->has('email'))
+                    <!-- Ini masih perlu diedit -->
+					        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+					<!-- Ini masih perlu diedit -->
+                        @endif
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Kata sandi">
+					<input class="input100" id="password" type="password" placeholder="Kata sandi" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" 
+					name="password" required>
+
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
+						@if ($errors->has('password'))
+						<!-- Ini masih perlu diedit -->
+                            <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+						<!-- Ini masih perlu diedit -->
+                        @endif
 					</div>
 					
-					<button class="container-login100-form-btn">
-						<a href="beranda.php" class="login100-form-btn">Masuk</a>	
+
+
+
+<!-- Ganti Font Masuknya aja -->
+					<button class="container-login100-form-btn" type="submit">
+						<a class="login100-form-btn">{{ __('Masuk') }} </a>	
 					</button>
+<!-- Ganti Font Masuknya aja -->
+				
+
+
 
 					<div class="text-center p-t-12">
 						<span class="txt1">
 							Lupa
 						</span>
-						<a class="txt2" href="password.php">
-							kata sandi?
-						</a>
+						@if (Route::has('password.request'))
+                            
+							<a class="txt2" href="{{ route('password.request') }}">
+								kata sandi?
+							</a>
+						@endif
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="{{ route('signup') }}">
+						<a class="txt2" href="register">
 							Buat Akun
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
