@@ -5,20 +5,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="img/book-icon.png"/>
+	<link rel="icon" type="image/png" href="{{asset('img/book-icon.png')}}"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/animate/animate.css')}}">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/css-hamburgers/hamburgers.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/select2/select2.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}">
 <!--===============================================================================================-->
 
 </head>
@@ -28,7 +28,9 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="img/signup-01.svg" alt="IMG">
+					<a href="/">
+						<img src="{{asset('img/signup-01.svg')}}" alt="IMG">
+					</a>
 					<div class="container-login100-form-btn">
 						
 						<a href="{{ url('/home') }}" class="login100-form-btn">Beranda</a>
@@ -45,8 +47,8 @@
 					{{ csrf_field() }}
                     {{ method_field('PUT') }}
 					
-					<input type="text" name="id" value="{{$usr->id}}">
-
+					<b>ID: <input type="text" name="id" value="{{$usr->id}}">
+						</b>
 					<div class="wrap-input100 validate-input" data-validate = "Name is required">
 						<input class="input100" type="text" name="name" placeholder="Nama" value=" {{ $usr->name }}">
 						@if($errors->has('name'))

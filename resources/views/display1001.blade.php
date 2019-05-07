@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Riyus </title>
+  <title>Detail Buku </title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -24,29 +24,14 @@
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-01.css" rel="stylesheet">
 
   
 </head>
 
 <body>
   <!--==========================Header============================-->
- 
-
-  <!--==========================
-    Intro Section
-  ============================-->
-  <section id="intro">
-    <div class="container d-flex h-100">
-      <div class="row justify-content-center align-self-center">
-        <div class="col-md-6 intro-info order-md-first order-last">
-          <h2>Riyus<br>Tidak ada <span>yang setia seperti buku</span></h2>
-          
-          <div>
-           @if (Route::has('login'))
-            @auth
-            <a href="/home" class="btn-get-started scrollto">Beranda</a>
-            <header id="header">
+  <header id="header">
 
     <div id="topbar">
       <div class="container">
@@ -61,7 +46,7 @@
 
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <h1 class="text-light"><a href="/" class="scrollto"><span>Riyus</span></a></h1>
+        <h1 class="text-light"><a href="/" class="scrollto"><span>RIYUS</span></a></h1>
         <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
 
@@ -71,37 +56,8 @@
           
           <li class="drop-down"><a href=""><i class="fa fa-person" aria-hidden="true"></i></a>
             <ul>
-              
-                
-                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <li><a href="{{ url('/editprofile') }}">Edit Profile</a></li>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                        
-                                    </form>
-                                    
-                                </div>
-                            </li>
-              
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            </form> 
-              </a>
-              
-              
-              
-              
-              
-              </li>
+              <li><a href="#">Edit Profile</a></li>
+              <li><a href="index.php">Keluar</a></li>
             </ul>
           </li>
           <li><a href="#footer">KONTAK KAMI</a></li>
@@ -110,55 +66,75 @@
       
     </div>
   </header><!-- #header -->
-            @else
-            <header id="header">
 
-<div id="topbar">
-    <div class="container">
-      <div class="social-links">
-        <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
-        <a href="http://instagram.com" class="instagram"><i class="fa fa-instagram"></i></a>
-      </div>
-    </div>
-  </div>
+  <!--Main layout-->
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
 
-  <div class="container">
+      <!--Grid row-->
+      <div class="row wow fadeIn">
 
-    <div class="logo float-left">
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <h1 class="text-light"><a href="/" class="scrollto"><span>Riyus</span></a></h1>
-      <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
-    </div>
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
 
-   <nav class="main-nav float-right d-none d-lg-block">
-      <ul>
-        <li><a href="#footer">KONTAK KAMI</a></li>
-      </ul>
-    </nav><!-- .main-nav -->
-    
-  </div>
-</header><!-- #header -->
-              <a href="{{ route('login') }}" class="btn-get-started scrollto">Masuk</a>
-              @if (Route::has('register'))
-              <a href="{{ route('register') }}" class="btn-get-started scrollto">Buat Akun</a>
-              <a href="{{ url('beli')}}" class="btn-get-started scrollto">Beli</a>
-              @endif
-            @endauth
-          @endif
+          <img src="/data_file/deathly_hallow.jpg" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+          <p class="lead font-weight-bold">Nama Buku</p>
+            <p class="lead">
+                    <p>Harry Potter Deathly Hallow</p>
+            </p>
+            
+			<p class="lead font-weight-bold">Harga</p>
+            <p class="lead">
+                    <span>40.000</span>
+            </p>
+
+			<p class="lead font-weight-bold">Lokasi</p>
+
+			<p>Jalan Baru Bogor</p>
+
+
+            <p class="lead font-weight-bold">Deskripsi</p>
+
+            <p>Voldemort dan para Pelahap Mautnya di rumah Lucius Malfoy, yang merencanakan untuk membunuh Harry Potter sebelum ia dapat bersembunyi kembali. Meminjam tongkat sihir Lucius, Voldemort membunuh tawanannya, Profesor Charity Burbage, guru Telaah Muggle di Hogwarts, atas alasan telah mengajarkan subyek tersebut dan telah menganjurkan agar paradigma kemurnian darah penyihir diakhiri.
+
+Harry telah siap untuk melakukan perjalanannya dan membaca obituari Albus Dumbledore; dan terungkaplah bahwa ayah Dumbledore, Percival, adalah seorang pembenci non-penyihir dan telah membunuh banyak Muggle, dan meninggal di Penjara Azkaban atas kejahatannya Harry kemudian meyakinkan keluarga Dursley bahwa mereka harus segera meninggalkan rumah mereka untuk menghindarkan diri dari para Pelahap Maut. Keluarga Dursley kemudian pergi menyembunyikan diri dengan dikawal sepasang penyihir setelah sebelumnya Dudley melontarkan pengakuan bahwa ia peduli akan Harry.
+
+Bersama-sama dengan anggota Orde Phoenix, Harry kemudian pergi dari rumah Dursley ke The Burrow. Dalam perjalanan itu, Hedwig, burung hantu Harry, terbunuh oleh kutukan pembunuh. George Weasley kehilangan sebelah telinganya dan Mad-Eye Moody dibunuh oleh Voldemort sendiri.</p>
+
+			<p class="lead font-weight-bold">Kontak</p>
+
+			<p> 081212345677</p>
+			
+            
+              
+
+            </form>
+
           </div>
+          <!--Content-->
+
         </div>
-  
-        <div class="col-md-6 intro-img order-md-last order-first">
-          <img src="img/intro-img-01.svg" alt="" class="img-fluid">
-        </div>
+        <!--Grid column-->
+
       </div>
+      <!--Grid row-->
 
-    </div>
-  </section><!-- #intro -->
+      <hr>
 
-  <main id="main">
-    
-  <!--==========================
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center wow fadeIn">
+
+<!--==========================
     Footer
   ============================-->
   <footer id="footer" class="section-bg">

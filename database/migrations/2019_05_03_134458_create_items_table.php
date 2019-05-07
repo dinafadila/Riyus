@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->string('nama_buku');
             $table->integer('harga');
             $table->string('deskripsi');
-            $table->integer('nomor_telepon');
+            $table->integer('nomor_telepon'20);
             $table->string('alamat');
             $table->string('file');            
             

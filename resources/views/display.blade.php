@@ -46,7 +46,7 @@
 
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <h1 class="text-light"><a href="#intro" class="scrollto"><span>Detail Buku</span></a></h1>
+        <h1 class="text-light"><a href="/" class="scrollto"><span>RIYUS</span></a></h1>
         <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
 
@@ -77,7 +77,7 @@
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">
+          <img src="/data_file/deathly_hallow.jpg" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -88,31 +88,32 @@
           <!--Content-->
           <div class="p-4">
 
+          <p class="lead font-weight-bold">Nama Buku</p>
+            <p class="lead">
+                    <p>{{}}</p>
+            </p>
             
 			<p class="lead font-weight-bold">Harga</p>
             <p class="lead">
-              <span class="mr-1">
-                <del>$200</del>
-              </span>
-              <span>$100</span>
+                    <span>40.000</span>
             </p>
 
 			<p class="lead font-weight-bold">Lokasi</p>
 
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa
-			sint voluptatibus!
-			Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.</p>
+			<p>Jalan Baru Bogor</p>
 
 
             <p class="lead font-weight-bold">Deskripsi</p>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa
-              sint voluptatibus!
-              Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.</p>
+            <p>Voldemort dan para Pelahap Mautnya di rumah Lucius Malfoy, yang merencanakan untuk membunuh Harry Potter sebelum ia dapat bersembunyi kembali. Meminjam tongkat sihir Lucius, Voldemort membunuh tawanannya, Profesor Charity Burbage, guru Telaah Muggle di Hogwarts, atas alasan telah mengajarkan subyek tersebut dan telah menganjurkan agar paradigma kemurnian darah penyihir diakhiri.
+
+Harry telah siap untuk melakukan perjalanannya dan membaca obituari Albus Dumbledore; dan terungkaplah bahwa ayah Dumbledore, Percival, adalah seorang pembenci non-penyihir dan telah membunuh banyak Muggle, dan meninggal di Penjara Azkaban atas kejahatannya Harry kemudian meyakinkan keluarga Dursley bahwa mereka harus segera meninggalkan rumah mereka untuk menghindarkan diri dari para Pelahap Maut. Keluarga Dursley kemudian pergi menyembunyikan diri dengan dikawal sepasang penyihir setelah sebelumnya Dudley melontarkan pengakuan bahwa ia peduli akan Harry.
+
+Bersama-sama dengan anggota Orde Phoenix, Harry kemudian pergi dari rumah Dursley ke The Burrow. Dalam perjalanan itu, Hedwig, burung hantu Harry, terbunuh oleh kutukan pembunuh. George Weasley kehilangan sebelah telinganya dan Mad-Eye Moody dibunuh oleh Voldemort sendiri.</p>
 
 			<p class="lead font-weight-bold">Kontak</p>
 
-			<p> 0812- 1234 - 5677</p>
+			<p> 081212345677</p>
 			
             
               
@@ -150,7 +151,7 @@
 
                   <div class="footer-info">
                     <h3>Riyus</h3>
-                    <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+                    <p>Riyus merupakan aplikasi yang mengutamakan penjualan buku bekas dengan sistem penjualan online. Setiap orang apabila memiliki buku yang sudah tidak terpakai dan sudah tidak dibaca dapat menjualnya melalui aplikasi ini.</p>
                   </div>
 
                   
@@ -162,11 +163,9 @@
                   <div class="footer-links">
                     <h4>Kontak Kami</h4>
                     <p>
-                      A108 Adam Street <br>
-                      New York, NY 535022<br>
-                      United States <br>
-                      <strong>Phone:</strong> +1 5589 55488 55<br>
-                      <strong>Email:</strong> info@example.com<br>
+                      Dramaga, IPB <br>
+                      Bogor, 021-7372578<br>
+                      Indonesia <br>
                     </p>
                   </div>
 
@@ -181,36 +180,7 @@
 
           </div>
 
-          <div class="col-lg-6">
-
-            <div class="form">
-              
-              <h4>Send us a message</h4>
-              <p>Eos ipsa est voluptates. Nostrum nam libero ipsa vero. Debitis quasi sit eaque numquam similique commodi harum aut temporibus.</p>
-              <form action="" method="post" role="form" class="contactForm">
-                <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                  <div class="validation"></div>
-                </div>
-
-                <div id="sendmessage">Your message has been sent. Thank you!</div>
-                <div id="errormessage"></div>
-
-                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
-              </form>
-            </div>
+          
 
           </div>
 
@@ -220,23 +190,29 @@
 
       </div>
     </div>
-  <!--/.Footer-->
 
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <!-- Initializations -->
-  <script type="text/javascript">
-    // Animations initialization
-    new WOW().init();
+  
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
 
-  </script>
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/mobile-nav/mobile-nav.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
 </body>
-
 </html>

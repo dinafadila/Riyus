@@ -112,7 +112,7 @@
                               
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input id="password" class="input100" type="password" placeholder="Kata sandi" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" 
+						<input id="password" class="input100" type="password" placeholder="Kata sandi (min. 8 char)" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" 
                         name="password" required>
                         
 						<span class="focus-input100"></span>

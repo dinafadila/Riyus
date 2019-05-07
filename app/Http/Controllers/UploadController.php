@@ -38,10 +38,41 @@ class UploadController extends Controller
             'deskripsi' => $request->deskripsi,
             'nomor_telepon' => $request->nomor_telepon,
             'alamat' => $request->alamat,
-			'file' => $file,
+			'file' => $nama_file,
 			
 		]);
  
 		return redirect('beli');
 	}
+
+	public function edit($id)
+	{
+		$itm = Item::where('id',$id)->first();
+		return view('editbuku',compact('itm'));
+	}
+
+	public function update($id, Request $request)
+{
+    $this->validate($request,[
+        'nama_buku' => ['required', 'string', 'max:255'],
+        'harga'=> ['required', 'string', 'max:20'],
+        'deskripsi' =>['required', 'string', 'max:500'],
+		'no_telepon' => ['required','max:20'],
+		'alamat'=>['required','string'],
+		'file'=>['required','file'],
+    ]);
+
+    $id = $request->input('id');
+    $data=array(
+		'nama_buku'=>$request->input('nama_buku'),
+		'harga'=>$request->input('harga'),
+		'deskripsi'=>$request->input('deskripsi'),
+        'no_telepon'=>$request->input('no_telepon'),
+        'alamat'=>$request->input('alamat'),
+        'file'=>$request->input('file'),
+    );
+
+    Item::find($id)->update($data);
+    return redirect('/lamanjualan');
+}
 }

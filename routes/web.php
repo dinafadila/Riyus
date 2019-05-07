@@ -37,6 +37,14 @@ Route::get('/display', function () {
     return view('display');
 });
 
+Route::get('/display1001', function () {
+    return view('display1001');
+});
+
+Route::get('/display1002', function () {
+    return view('display1002');
+});
+
 Route::get('/forgot', function () {
     return view('forgot');
 });
@@ -91,5 +99,8 @@ Route::post('/lamanjualan', 'UploadController@proses_upload');
 Route::get('/lamanjualan', 'ItemController@index');
 Route::get('/beli', 'ItemController@beli');
 
-Route::get('/editprofile/edit/{id}', 'UserController@edit');
+Route::get('/editprofile/{id}', 'UserController@edit');
 Route::put('/editprofile/update/{id}', 'UserController@update');
+
+Route::get('/editbuku/{id}', 'UploadController@edit');
+Route::put('/editbuku/update/{id}', 'UploadController@update');
