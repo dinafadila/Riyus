@@ -151,14 +151,14 @@
           <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 portfolio-item">
             <div class="card h-100" >
               <div class="img-frame center">
-              <a href="/"><img class="card-img-top img-responsive img-cover" src="{{URL::asset('/data_file')}}/{{ $i->file }}" alt=""></a>
+              <a href="/display/{{$i->id}}"><img class="card-img-top img-responsive img-cover" src="{{URL::asset('/data_file')}}/{{ $i->file }}" alt=""></a>
               
             </div>
               <div class="card-body">
                </a>
                   <table id="example1">
                     <tr>
-                     <td><a href="/"> <font size=2 class="card-title text-dark"> <b> {{str_limit($i->nama_buku, 70, '...')}} </b></font></a></td>
+                     <td><a href="/display/{{$i->id}}"> <font size=2 class="card-title text-dark"> <b> {{str_limit($i->nama_buku, 70, '...')}} </b></font></a></td>
                    </tr>
                       <tr>
                           <td><font size=1 class="text-muted">{{$i->harga}}</font></td>

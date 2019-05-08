@@ -8,23 +8,23 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="img/book-icon.png" rel="icon">
+  <link href="{{asset('img/book-icon.png')}}" rel="icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+  <link href="{{asset('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700')}}" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="{{asset('lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+  <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
+  <link href="{{asset('lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+  <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="css/style-01.css" rel="stylesheet">
+  <link href="{{asset('css/style-01.css')}}" rel="stylesheet">
 
   
 </head>
@@ -77,7 +77,7 @@
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
-          <img src="/data_file/deathly_hallow.jpg" class="img-fluid" alt="">
+          <img src="{{URL::asset('/data_file')}}/{{ $item->file }}" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -90,30 +90,25 @@
 
           <p class="lead font-weight-bold">Nama Buku</p>
             <p class="lead">
-                    <p>{{}}</p>
+                    <p>{{$item->nama_buku}}</p>
             </p>
             
 			<p class="lead font-weight-bold">Harga</p>
             <p class="lead">
-                    <span>40.000</span>
+                    <span>{{$item->harga}}</span>
             </p>
 
 			<p class="lead font-weight-bold">Lokasi</p>
 
-			<p>Jalan Baru Bogor</p>
+			<p>{{$item->alamat}}</p>
 
 
             <p class="lead font-weight-bold">Deskripsi</p>
 
-            <p>Voldemort dan para Pelahap Mautnya di rumah Lucius Malfoy, yang merencanakan untuk membunuh Harry Potter sebelum ia dapat bersembunyi kembali. Meminjam tongkat sihir Lucius, Voldemort membunuh tawanannya, Profesor Charity Burbage, guru Telaah Muggle di Hogwarts, atas alasan telah mengajarkan subyek tersebut dan telah menganjurkan agar paradigma kemurnian darah penyihir diakhiri.
-
-Harry telah siap untuk melakukan perjalanannya dan membaca obituari Albus Dumbledore; dan terungkaplah bahwa ayah Dumbledore, Percival, adalah seorang pembenci non-penyihir dan telah membunuh banyak Muggle, dan meninggal di Penjara Azkaban atas kejahatannya Harry kemudian meyakinkan keluarga Dursley bahwa mereka harus segera meninggalkan rumah mereka untuk menghindarkan diri dari para Pelahap Maut. Keluarga Dursley kemudian pergi menyembunyikan diri dengan dikawal sepasang penyihir setelah sebelumnya Dudley melontarkan pengakuan bahwa ia peduli akan Harry.
-
-Bersama-sama dengan anggota Orde Phoenix, Harry kemudian pergi dari rumah Dursley ke The Burrow. Dalam perjalanan itu, Hedwig, burung hantu Harry, terbunuh oleh kutukan pembunuh. George Weasley kehilangan sebelah telinganya dan Mad-Eye Moody dibunuh oleh Voldemort sendiri.</p>
-
+            <p>{{$item->deskripsi}}</p>
 			<p class="lead font-weight-bold">Kontak</p>
 
-			<p> 081212345677</p>
+			<p> {{$item->nomor_telepon}}</p>
 			
             
               

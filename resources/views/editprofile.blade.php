@@ -47,8 +47,8 @@
 					{{ csrf_field() }}
                     {{ method_field('PUT') }}
 					
-					<b>ID: <input type="text" name="id" value="{{$usr->id}}">
-						</b>
+					<input  type="hidden" name="id" value="{{$usr->id}}">
+						
 					<div class="wrap-input100 validate-input" data-validate = "Name is required">
 						<input class="input100" type="text" name="name" placeholder="Nama" value=" {{ $usr->name }}">
 						@if($errors->has('name'))
@@ -101,6 +101,7 @@
 						</span>
 					</div>
 
+					
 					
 					
 					<div class="container-login100-form-btn">

@@ -91,6 +91,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+
 Route::resource('posts', 'PostsController');
 
 Route::get('/upload', 'UploadController@upload');
@@ -104,3 +105,5 @@ Route::put('/editprofile/update/{id}', 'UserController@update');
 
 Route::get('/editbuku/{id}', 'UploadController@edit');
 Route::put('/editbuku/update/{id}', 'UploadController@update');
+
+Route::get('/display/{id}', 'ItemController@detail_item');
