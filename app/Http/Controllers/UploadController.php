@@ -42,16 +42,16 @@ class UploadController extends Controller
 			
 		]);
  
-		return redirect('beli');
+		return redirect('lamanjualan');
 	}
 
-	public function edit($id)
+	public function edit_buku($id)
 	{
-		$itm = Item::where('id',$id)->first();
-		return view('editbuku',compact('itm'));
+		$item = Item::where('id',$id)->first();
+		return view('editbuku',compact('item'));
 	}
 
-	public function update($id, Request $request)
+	public function update_buku($id, Request $request)
 {
     $this->validate($request,[
         'nama_buku' => ['required', 'string', 'max:255'],
@@ -75,4 +75,7 @@ class UploadController extends Controller
     Item::find($id)->update($data);
     return redirect('/lamanjualan');
 }
+	
+
+
 }

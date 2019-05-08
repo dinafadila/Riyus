@@ -21,22 +21,17 @@ class ItemController extends Controller
     	return view('beli', ['item' => $item]);
     }
 
-    public function detail_item(Request $request, $id){
-
-        
-        
+    public function detail_item(Request $request, $id)
+    {
         $item = Item::where('id', $id)->first();
-        
-        // if($item === NULL){
-        //     return redirect('/beli')->with('danger','No book found');
-        // }
-        
-        // $users = Auth::user()->id;
-        
-
-        
         return view('display', compact('item'));
-
     }
+
+    public function delete_buku($id)
+{
+        $item = Item::where('id', $id)->first();
+        $item->delete();
+            return redirect('/lamanjualan');
+}
 
 }

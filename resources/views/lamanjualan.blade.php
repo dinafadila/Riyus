@@ -161,7 +161,7 @@
                           <td><font size=1 class="text-muted">{{$i->harga}}</font></td>
                         </tr>
                     <tr>
-                        <td><a href='{{ url("/editbuku") }}'> <font size=2 class="card-title text-dark"> <b> Edit </b></font></a></td>
+                        <td><a href='{{ url("/editbuku/{$i->id}") }}'> <font size=2 class="card-title text-dark"> <b> Edit </b></font></a></td>
                    </tr> 
                   </table>
               </div>
