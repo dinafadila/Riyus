@@ -35,7 +35,10 @@
 				
 				
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form"
+					method="POST" action="{{ route('loginadmin')}}">
+
+					@csrf
 				
 					<span class="login100-form-title">
 						Admin - Masuk
@@ -57,8 +60,8 @@
 						</span>
 					</div>
 					
-					<button class="container-login100-form-btn">
-						<a href="{{ url('/lamanadmin') }}" class="login100-form-btn">Masuk</a>	
+					<button class="container-login100-form-btn" type="submit">
+						<a class="login100-form-btn">{{ __('Masuk') }} </a>	
 					</button>
 
 					

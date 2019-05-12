@@ -38,7 +38,7 @@
 					</div>
 				</div>
 
-				<form class="login100-form validate-form"  method="post" action="/editbuku/update_buku/{$id}">
+				<form class="login100-form validate-form" enctype="multipart/form-data"  method="post" action="/editbuku/update_buku/{{$item->id}}">
 					<span class="login100-form-title">
 						Sunting Buku
 					</span>

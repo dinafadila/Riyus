@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Iluminate\Support\Facades\Storage;
 
 use App\Item;
 
@@ -43,32 +44,26 @@ class ItemController extends Controller
 		'alamat'=>['required','string'],
 		'file'=>['required'],
     ]);
-
-    $file = $request->file;
- 
-		$nama_file = time()."_".$file->getClientOriginalExtension();
- 
-      	        // isi dengan nama folder tempat kemana file diupload
-		$tujuan_upload = 'data_file';
-		$file->move($tujuan_upload,$nama_file);
-
-    $id = $request->input('id');
-    $data=array(
-		'nama_buku'=>$request->input('nama_buku'),
-		'harga'=>$request->input('harga'),
-		'deskripsi'=>$request->input('deskripsi'),
-        'nomor_telepon'=>$request->input('nomor_telepon'),
-        'alamat'=>$request->input('alamat'),
-        'file'=>$request->input('file'),
-    );
-
-   
-
-    
-
-    Item::find($id)->update($data);
-    return redirect('/lamanjualan');
+        
+    $file = Item::findOrFail($id);
+  
+    $file->nama_buku = $request->input('nama_buku');
+    $file->harga = $request->input('harga');
+    $file->deskripsi = $request->input('deskripsi');
+    $file->nomor_telepon = $request->input('nomor_telepon');
+    $file->alamat = $request->input('alamat');
+    $exist = Storage::disk('local')->exists('file',$file->file);
+    if($exist){
+        Storage::disk('local')->delete('file',$file->file);
+    }
+    if($request->hasFile('file')){
+        $name = Storage::disk('local')->put('file', $request->file);
+        $file->file = $name;
+    }
+    $file->save();
+    return redirect('lamanjualan');
 }
+
 
     public function delete_buku($id)
 {

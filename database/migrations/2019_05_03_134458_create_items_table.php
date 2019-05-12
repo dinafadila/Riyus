@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->string('nama_buku');
             $table->string('harga',20);
             $table->string('deskripsi');
-            $table->string('nomor_telepon');
+            $table->string('nomor_telepon',20);
             $table->string('alamat');
             $table->string('file');            
             
