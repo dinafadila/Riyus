@@ -103,8 +103,8 @@ Route::get('/beli', 'ItemController@beli');
 Route::get('/editprofile/{id}', 'UserController@edit');
 Route::put('/editprofile/update/{id}', 'UserController@update');
 
-Route::get('/editbuku/{id}', 'UploadController@edit_buku');
-Route::put('/editbuku/update/{id}', 'UploadController@update_buku');
+Route::get('/editbuku/{id}', 'ItemController@edit_buku');
+Route::put('/editbuku/update_buku/{id}', 'ItemController@update_buku');
 
 Route::get('/display/{id}', 'ItemController@detail_item');
 Route::get('/editbuku/hapus/{id}', 'ItemController@delete_buku');

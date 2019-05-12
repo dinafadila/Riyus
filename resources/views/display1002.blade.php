@@ -50,19 +50,7 @@
         <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
 
-     <nav class="main-nav float-right d-none d-lg-block">
-        <ul>
-          
-          
-          <li class="drop-down"><a href=""><i class="fa fa-person" aria-hidden="true"></i></a>
-            <ul>
-              <li><a href="#">Edit Profile</a></li>
-              <li><a href="index.php">Keluar</a></li>
-            </ul>
-          </li>
-          <li><a href="#footer">KONTAK KAMI</a></li>
-        </ul>
-      </nav><!-- .main-nav -->
+     
       
     </div>
   </header><!-- #header -->

@@ -28,8 +28,8 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-				<a href="/">
-					<img src="{{asset('img/upload.svg')}}" alt="IMG">
+					<a href="/">
+						<img src="{{asset('img/upload.svg')}}" alt="IMG">
 				</a>
 					<div class="container-login100-form-btn">
 						
@@ -38,7 +38,7 @@
 					</div>
 				</div>
 
-				<form class="login100-form validate-form" method="post" action="/editbuku/update/{$id}">
+				<form class="login100-form validate-form"  method="post" action="/editbuku/update_buku/{$id}">
 					<span class="login100-form-title">
 						Sunting Buku
 					</span>
@@ -50,7 +50,7 @@
 					
 			
 					<div class="wrap-input100 validate-input" data-validate = "Name is required">
-						<input class="input100" type="text" name="nama" placeholder="Nama Buku" value="{{$item->nama_buku}}">
+						<input class="input100" type="text" name="nama_buku" placeholder="Nama Buku" value="{{$item->nama_buku}}">
 						@if($errors->has('nama_buku'))
                                 <div class="text-danger">
                                     {{ $errors->first('nama_buku')}}
@@ -89,7 +89,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Phone number is required">
-						<input class="input100" type="number" name="phone" placeholder="Nomor Ponsel Penjual" value="{{$item->nomor_telepon}}">
+						<input class="input100" type="number" name="nomor_telepon" placeholder="Nomor Ponsel Penjual" value="{{$item->nomor_telepon}}">
 						@if($errors->has('nomor_telepon'))
                                 <div class="text-danger">
                                     {{ $errors->first('nomor_telepon')}}
@@ -102,7 +102,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Address is required">
-						<input class="input100" type="text" name="address" placeholder="Alamat Penjual" value="{{$item->alamat}}">
+						<input class="input100" type="text" name="alamat" placeholder="Alamat Penjual" value="{{$item->alamat}}">
 						@if($errors->has('alamat'))
                                 <div class="text-danger">
                                     {{ $errors->first('alamat')}}
@@ -115,8 +115,9 @@
 					</div>
 
                     <div class="wrap-input100 validate-input">
-                        <label for="fileToUpload">Upload Gambar Buku</label><br/>
-                        <input class="input100" type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();" value="{{$item->file}}">
+                        <label >Upload Gambar Buku</label><br/>
+                        <input class="input100" type="file" name="file" id="file" onchange="fileSelected();" value="{{$item->file}}">
+						<img src="{{asset('data_file/'.$item->file)}}" alt="" width="150">
 							@if($errors->has('file'))
                                 <div class="text-danger">
                                     {{ $errors->first('file')}}

@@ -15,12 +15,12 @@ class UploadController extends Controller
 
 	public function proses_upload(Request $request){
 		$this->validate($request, [
-			'nama_buku' => 'required',
-            'harga' => 'required',
-            'deskripsi' => 'required',
-            'nomor_telepon' => 'required',
-            'alamat' => 'required',
-            'file' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+			'nama_buku' => ['required', 'string', 'max:255'],
+			'harga'=> ['required', 'string', 'max:20'],
+			'deskripsi' =>['required', 'string', 'max:500'],
+			'nomor_telepon' => ['required','max:20'],
+			'alamat'=>['required','string'],
+			'file'=>'required|file|image|mimes:jpeg,png,jpg|max:2048',
 		]);
 
 		// menyimpan data file yang diupload ke variabel $file
