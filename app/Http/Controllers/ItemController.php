@@ -42,7 +42,7 @@ class ItemController extends Controller
         'deskripsi' =>['required', 'string', 'max:500'],
 		'nomor_telepon' => ['required','max:20'],
 		'alamat'=>['required','string'],
-		'file'=>['required'],
+		'file'=>[],
     ]);
         
     $file = Item::findOrFail($id);

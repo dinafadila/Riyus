@@ -130,11 +130,13 @@
               <h3 class="midnight-city text-uppercase text-left">
                 Lokasi: {{ Auth::user()->address }} <span class="caret"></span>
                 </h3>
-                
+                    <h3 class="midnight-city text-uppercase text-left">
+                    Nomor Telepon: {{ Auth::user()->phone }} <span class="caret"></span>
+                    </h3>
                 
                 <div class="uploadbox text-right">
                 <h3 class="midnight-city text-uppercase text-right">
-                  <a href="{{ url('/upload') }}" class="btn-get-started scrollto">
+                  <a href="{{ url('/upload') }}"  class="login100-form-btn">
                   <strong>TAMBAH BUKU</strong></a>
                 </h3>
               </div>
@@ -148,7 +150,7 @@
           <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 portfolio-item">
             <div class="card h-100" >
               <div class="img-frame center">
-              <a href="/display/{{$i->id}}"><img class="card-img-top img-responsive img-cover" src="{{asset('/data_file')}}/{{ $i->file }}" alt=""></a>
+              <a href="/display/{{$i->id}}"><img class="card-img-top img-responsive img-cover" src="{{$i->file}}" alt=""></a>
               
             </div>
               <div class="card-body">

@@ -41,7 +41,7 @@
   <!--==========================Header============================-->
   <header id="header">
 
-  <div id="topbar">
+    <div id="topbar">
       <div class="container">
         <div class="social-links">
           <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
@@ -60,6 +60,42 @@
 
      <nav class="main-nav float-right d-none d-lg-block">
         <ul>
+          
+          
+          <li class="drop-down"><a href=""><i class="fa fa-person" aria-hidden="true"></i></a>
+            <ul>
+              
+                
+                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                        
+                                    </form>
+                                    
+                                </div>
+                            </li>
+              
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            </form> 
+              </a>
+              
+              
+              
+              
+              
+              </li>
+            </ul>
+          </li>
           <li><a href="#footer">KONTAK KAMI</a></li>
         </ul>
       </nav><!-- .main-nav -->
@@ -86,72 +122,33 @@
   </section><!-- #intro -->
 
                 
-                <div id="example1" class="row">
+  <div id="example1" class="row">
                 <div class="container py-md-3">
-                <div class="side-bar col-lg-4">
-                    <div class="search-bar w3layouts-newsletter">
-                        <h3 class="sear-head">Search Here..</h3>
-                        <form action="#" method="post" class="d-flex">
-                            <input type="search" placeholder="Product name..." name="search" class="form-control" required="">
-                            <button class="btn1"><span class="fa fa-search" aria-hidden="true"></span></button>
-                        </form>
-                    </div>
-                    
-                </div>
+        <h3 class="midnight-city text-uppercase text-left">
+          Nama: {{ Auth::user()->name }} <span class="caret"></span>
+        </h3>
+              <h3 class="midnight-city text-uppercase text-left">
+                Lokasi: {{ Auth::user()->address }} <span class="caret"></span>
+                </h3>
+                
+                
+                <div class="uploadbox text-right">
+                <h3 class="midnight-city text-uppercase text-right">
+                  <a href="{{ url('/upload') }}" class="btn-get-started scrollto">
+                  <strong>TAMBAH BUKU</strong></a>
+                </h3>
+              </div>
+              
   <!--================Data Jual=====================-->
 
   <section >
-  
   <div id="example1" class="row">
-  <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 portfolio-item">
-            <div class="card h-100" >
-              <div class="img-frame center">
-              <a href="/display1001"><img class="card-img-top img-responsive img-cover" src="/data_file/deathly_hallow.jpg" alt=""></a>
-              
-            </div>
-              <div class="card-body">
-               </a>
-                  <table id="example1">
-                    <tr>
-                     <td><a href="/display"> <font size=2 class="card-title text-dark"> <b> Deathly Hallow Harry Potter </b></font></a></td>
-                   </tr>
-                      <tr>
-                          <td><font size=1 class="text-muted">40000</font></td>
-                        </tr> 
-                  </table>
-              </div>
-            </div>
-          </div>
-
-          
-          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 portfolio-item">
-            <div class="card h-100" >
-              <div class="img-frame center">
-              <a href="/display1002"><img class="card-img-top img-responsive img-cover" src="/data_file/fantastic_beast.jpg" alt=""></a>
-              
-            </div>
-              <div class="card-body">
-               </a>
-                  <table id="example1">
-                    <tr>
-                     <td><a href="/display1002"> <font size=2 class="card-title text-dark"> <b> Fantastic Beast </b></font></a></td>
-                   </tr>
-                      <tr>
-                          <td><font size=1 class="text-muted">50000</font></td>
-                        </tr> 
-                  </table>
-              </div>
-            </div>
-          </div>
-          
-
-          
         @foreach($item->all() as $i)
         
           <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 portfolio-item">
             <div class="card h-100" >
               <div class="img-frame center">
-              <a href="/display/{{$i->id}}"><img class="card-img-top img-responsive img-cover" src="{{ $i->file }}" alt=""></a>
+              <a href="/display/{{$i->id}}"><img class="card-img-top img-responsive img-cover" src="{{asset('/data_file')}}/{{ $i->file }}" alt=""></a>
               
             </div>
               <div class="card-body">
@@ -162,7 +159,10 @@
                    </tr>
                       <tr>
                           <td><font size=1 class="text-muted">{{$i->harga}}</font></td>
-                        </tr> 
+                        </tr>
+                    <tr>
+                        <td><a href='{{ url("/editbuku/{$i->id}") }}'> <font size=2 class="card-title text-dark"> <b> Edit </b></font></a></td>
+                   </tr> 
                   </table>
               </div>
             </div>
@@ -174,9 +174,10 @@
     <!----=========================================================-->
     
                     </section>
+          
                     
     
-  <!--==========================
+ <!--==========================
     Footer
   ============================-->
   <footer id="footer" class="section-bg">

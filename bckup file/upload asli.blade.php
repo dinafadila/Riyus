@@ -34,7 +34,7 @@
 				</div>
 				
 
-				<form method="POST" action="/upload/submit" enctype="multipart/form-data" class="login100-form validate-form">
+				<form method="POST" action="/lamanjualan" enctype="multipart/form-data" class="login100-form validate-form">
 					@csrf
 					<span class="login100-form-title">
 						Menambahkan Buku

@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 use App\Item;
 
 class UploadController extends Controller
@@ -23,59 +22,51 @@ class UploadController extends Controller
 			'file'=>'required|file|image|mimes:jpeg,png,jpg|max:2048',
 		]);
 
-		// menyimpan data file yang diupload ke variabel $file
-		$file = $request->file('file');
- 
-		$nama_file = time()."_".$file->getClientOriginalName();
- 
-      	        // isi dengan nama folder tempat kemana file diupload
-		$tujuan_upload = 'data_file';
-		$file->move($tujuan_upload,$nama_file);
- 
-		Item::create([
-            'nama_buku' => $request->nama_buku,
-            'harga' => $request->harga,
-            'deskripsi' => $request->deskripsi,
-            'nomor_telepon' => $request->nomor_telepon,
-            'alamat' => $request->alamat,
-			'file' => $nama_file,
-			
+		$item = new Item;
+		$item->nama_buku = $request->input('nama_buku');
+		$item->harga = $request->input('harga');
+		$item->deskripsi = $request->input('deskripsi');
+		$item->nomor_telepon = $request->input('nomor_telepon');
+		$item->alamat = $request->input('alamat');
+        $exist = Storage::disk('local')->exists('Items',$item->file);
+        if($exist){
+            Storage::disk('local')->delete('Items',$item->file);
+        }
+        if($request->hasFile('file')){
+            $name = Storage::disk('local')->put('Items', $request->file);
+            $item->file = $name;
+        }
+		$item->save();
+        return redirect()->route('sell')->withInfo('Post berhasil ditambahkan');
+	}
+
+	public function update_buku(Request $request, $id){
+		$this->validate($request, [
+			'nama_buku' => ['required', 'string', 'max:255'],
+			'harga'=> ['required', 'string', 'max:20'],
+			'deskripsi' =>['required', 'string', 'max:500'],
+			'nomor_telepon' => ['required','max:20'],
+			'alamat'=>['required','string'],
+			'file'=>'file|image|mimes:jpeg,png,jpg|max:2048',
 		]);
- 
-		return redirect('lamanjualan');
+
+		$item = Item::findOrFail($id);
+		$item->nama_buku = $request->input('nama_buku');
+		$item->harga = $request->input('harga');
+		$item->deskripsi = $request->input('deskripsi');
+		$item->nomor_telepon = $request->input('nomor_telepon');
+		$item->alamat = $request->input('alamat');
+        // $exist = Storage::disk('local')->exists('Items',$item->file);
+        // if($exist){
+        //     Storage::disk('local')->delete('Items',$item->file);
+        // }
+        if($request->hasFile('file')){
+			Storage::disk('local')->delete('Items',$item->file);
+            $name = Storage::disk('local')->put('Items', $request->file);
+            $item->file = $name;
+        }
+		$item->save();
+        return redirect()->route('sell')->withInfo('Post berhasil ditambahkan');
 	}
-
-	public function edit_buku($id)
-	{
-		$item = Item::where('id',$id)->first();
-		return view('editbuku',compact('item'));
-	}
-
-	public function update_buku($id, Request $request)
-{
-    $this->validate($request,[
-        'nama_buku' => ['required', 'string', 'max:255'],
-        'harga'=> ['required', 'string', 'max:20'],
-        'deskripsi' =>['required', 'string', 'max:500'],
-		'no_telepon' => ['required','max:20'],
-		'alamat'=>['required','string'],
-		'file'=>['required','file'],
-    ]);
-
-    $id = $request->input('id');
-    $data=array(
-		'nama_buku'=>$request->input('nama_buku'),
-		'harga'=>$request->input('harga'),
-		'deskripsi'=>$request->input('deskripsi'),
-        'no_telepon'=>$request->input('no_telepon'),
-        'alamat'=>$request->input('alamat'),
-        'file'=>$request->input('file'),
-    );
-
-    Item::find($id)->update($data);
-    return redirect('/lamanjualan');
-}
-	
-
 
 }

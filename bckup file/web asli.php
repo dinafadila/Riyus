@@ -99,10 +99,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('posts', 'PostsController');
 
 Route::get('/upload', 'UploadController@upload');
-Route::post('/upload/submit', 'UploadController@proses_upload');
-Route::post('/upload/edit/{id}', 'UploadController@update_buku');
+Route::post('/lamanjualan', 'UploadController@proses_upload');
 
-Route::get('/lamanjualan', 'ItemController@index')->name('sell');
+Route::get('/lamanjualan', 'ItemController@index');
 Route::get('/beli', 'ItemController@beli');
 
 Route::get('/editprofile/{id}', 'UserController@edit');

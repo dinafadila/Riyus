@@ -38,12 +38,16 @@
 					</div>
 				</div>
 
-				<form class="login100-form validate-form" enctype="multipart/form-data"  method="post" action="/upload/edit/{{$item->id}}">
+				<form class="login100-form validate-form" enctype="multipart/form-data"  method="post" action="/editbuku/update_buku/{{$item->id}}">
 					<span class="login100-form-title">
 						Sunting Buku
 					</span>
 
 					{{ csrf_field() }}
+                    {{ method_field('PUT') }}
+					
+					<input  type="hidden" name="id" value="{{$item->id}}">
+					
 			
 					<div class="wrap-input100 validate-input" data-validate = "Name is required">
 						<input class="input100" type="text" name="nama_buku" placeholder="Nama Buku" value="{{$item->nama_buku}}">
@@ -77,7 +81,7 @@
                                 <div class="text-danger">
                                     {{ $errors->first('deskripsi')}}
                                 </div>
-						@endif
+                            @endif
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-pencil" aria-hidden="true"></i> <!-- buat simbolnya -->
@@ -113,7 +117,7 @@
                     <div class="wrap-input100 validate-input">
                         <label >Upload Gambar Buku</label><br/>
                         <input class="input100" type="file" name="file" id="file" onchange="fileSelected();" value="{{$item->file}}">
-						
+						<img src="{{asset('data_file/'.$item->file)}}" alt="" width="150">
 							@if($errors->has('file'))
                                 <div class="text-danger">
                                     {{ $errors->first('file')}}
@@ -123,14 +127,12 @@
 						<span class="symbol-input100">
 							<i class="fa fa-book" aria-hidden="true"></i>
 						</span>
-						
                         </div>
                         <div id="fileName"></div>
                         <div id="fileSize"></div>
                         <div id="fileType"></div>
                         
                     <div id="progressNumber"></div>
-					<img src="{{asset($item->file)}}" alt="" width="150">
 
 					
 					

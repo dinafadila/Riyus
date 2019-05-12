@@ -65,7 +65,7 @@
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
-          <img src="{{URL::asset('/data_file')}}/{{ $item->file }}" class="img-fluid" alt="">
+          <img src="{{asset($item->file)}}" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
