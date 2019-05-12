@@ -44,6 +44,14 @@ class ItemController extends Controller
 		'file'=>['required'],
     ]);
 
+    $file = $request->file;
+ 
+		$nama_file = time()."_".$file->getClientOriginalExtension();
+ 
+      	        // isi dengan nama folder tempat kemana file diupload
+		$tujuan_upload = 'data_file';
+		$file->move($tujuan_upload,$nama_file);
+
     $id = $request->input('id');
     $data=array(
 		'nama_buku'=>$request->input('nama_buku'),
