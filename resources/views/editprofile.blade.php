@@ -76,7 +76,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Phone number is required">
-						<input class="input100" type="text" name="phone" placeholder="Nomor Ponsel" value="{{$usr->phone}}">
+						<input class="input100" type="text" name="phone" min="0" placeholder="Nomor Ponsel" value="{{$usr->phone}}">
 							@if($errors->has('phone'))
                                 <div class="text-danger">
                                     {{ $errors->first('phone')}}

@@ -28,6 +28,8 @@ class UploadController extends Controller
 		$item->deskripsi = $request->input('deskripsi');
 		$item->nomor_telepon = $request->input('nomor_telepon');
 		$item->alamat = $request->input('alamat');
+		$item->user_id = auth()->user()->id;
+
         $exist = Storage::disk('local')->exists('Items',$item->file);
         if($exist){
             Storage::disk('local')->delete('Items',$item->file);

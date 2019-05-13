@@ -58,7 +58,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Harga Buku harus diisi!">
-						<input id="harga" class="input100" type="number" placeholder="Harga Buku" class="form-control{{ $errors->has('harga') ? ' is-invalid' : '' }}" 
+						<input id="harga" class="input100" type="number" min ="0" placeholder="Harga Buku" class="form-control{{ $errors->has('harga') ? ' is-invalid' : '' }}" 
                         name="harga" value="{{ old('harga') }}" required autofocus>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -88,7 +88,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Nomor telepon harus diisi!">
-						<input id="nomor_telepon" class="input100" type="number"  placeholder="Nomor Ponsel"
+						<input id="nomor_telepon" class="input100" type="number" min ="0" placeholder="Nomor Ponsel"
                         class="form-control{{ $errors->has('nomor_telepon') ? ' is-invalid' : '' }}" 
                         name="nomor_telepon" value="{{ old('nomor_telepon') }}" required autofocus>
 						<span class="focus-input100"></span>

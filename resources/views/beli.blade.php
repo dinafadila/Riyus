@@ -89,13 +89,13 @@
                 <div id="example1" class="row">
                 <div class="container py-md-3">
                 <div class="side-bar col-lg-4">
-                    <div class="search-bar w3layouts-newsletter">
-                        <h3 class="sear-head">Search Here..</h3>
-                        <form action="#" method="post" class="d-flex">
-                            <input type="search" placeholder="Product name..." name="search" class="form-control" required="">
+                    <!-- <div class="search-bar w3layouts-newsletter">
+                        <h3 class="sear-head">Cari..</h3>
+                        <form action="/beli/cari" method="get" class="d-flex">
+                            <input type="search" placeholder="Nama Buku..." name="search" class="form-control" required="" value="{{ old('cari') }}">
                             <button class="btn1"><span class="fa fa-search" aria-hidden="true"></span></button>
                         </form>
-                    </div>
+                    </div> -->
                     
                 </div>
   <!--================Data Jual=====================-->
@@ -113,7 +113,7 @@
                </a>
                   <table id="example1">
                     <tr>
-                     <td><a href="/display"> <font size=2 class="card-title text-dark"> <b> Deathly Hallow Harry Potter </b></font></a></td>
+                     <td><a href="/display1001"> <font size=2 class="card-title text-dark"> <b> Deathly Hallow Harry Potter </b></font></a></td>
                    </tr>
                       <tr>
                           <td><font size=1 class="text-muted">40000</font></td>
@@ -169,6 +169,7 @@
           </div>
       
         @endforeach  
+        
       
     </div>
     <!----=========================================================-->

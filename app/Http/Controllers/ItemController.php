@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Iluminate\Support\Facades\Storage;
+use Auth;
+use App\User;
 
 use App\Item;
 
@@ -12,8 +14,15 @@ class ItemController extends Controller
 
     public function index()
     {
-    	$item = Item::all();
-    	return view('lamanjualan', ['item' => $item]);
+    	if(Auth::user()){
+            $item= Item:: orderBy('created_at', 'desc'); // ->paginate(6);
+            $usr = Auth::user('id');
+            $user_id = auth()->user()->id;
+            $user = User::find($user_id);
+            return view('lamanjualan', compact('usr'))->with('item', $user->item);
+          // )->with('item',$user->item);
+                } else 
+            return redirect('/login');
     }
 
     public function beli()
@@ -34,35 +43,7 @@ class ItemController extends Controller
 		return view('editbuku',compact('item'));
 	}
 
-	public function update_buku($id, Request $request)
-{
-    $this->validate($request,[
-        'nama_buku' => ['required', 'string', 'max:255'],
-        'harga'=> ['required', 'string', 'max:20'],
-        'deskripsi' =>['required', 'string', 'max:500'],
-		'nomor_telepon' => ['required','max:20'],
-		'alamat'=>['required','string'],
-		'file'=>[],
-    ]);
-        
-    $file = Item::findOrFail($id);
-  
-    $file->nama_buku = $request->input('nama_buku');
-    $file->harga = $request->input('harga');
-    $file->deskripsi = $request->input('deskripsi');
-    $file->nomor_telepon = $request->input('nomor_telepon');
-    $file->alamat = $request->input('alamat');
-    $exist = Storage::disk('local')->exists('file',$file->file);
-    if($exist){
-        Storage::disk('local')->delete('file',$file->file);
-    }
-    if($request->hasFile('file')){
-        $name = Storage::disk('local')->put('file', $request->file);
-        $file->file = $name;
-    }
-    $file->save();
-    return redirect('lamanjualan');
-}
+	
 
 
     public function delete_buku($id)

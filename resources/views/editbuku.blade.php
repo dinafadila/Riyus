@@ -59,7 +59,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "harga is required">
-						<input class="input100" type="number" name="harga" placeholder="Harga Buku" value="{{$item->harga}}">
+						<input class="input100" type="number" name="harga" min="0" placeholder="Harga Buku" value="{{$item->harga}}">
 						@if($errors->has('harga'))
                                 <div class="text-danger">
                                     {{ $errors->first('harga')}}
@@ -85,7 +85,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Phone number is required">
-						<input class="input100" type="number" name="nomor_telepon" placeholder="Nomor Ponsel Penjual" value="{{$item->nomor_telepon}}">
+						<input class="input100" type="number" name="nomor_telepon" min="0" placeholder="Nomor Ponsel Penjual" value="{{$item->nomor_telepon}}">
 						@if($errors->has('nomor_telepon'))
                                 <div class="text-danger">
                                     {{ $errors->first('nomor_telepon')}}

@@ -104,6 +104,7 @@ Route::post('/upload/edit/{id}', 'UploadController@update_buku');
 
 Route::get('/lamanjualan', 'ItemController@index')->name('sell');
 Route::get('/beli', 'ItemController@beli');
+Route::get('/beli/cari','ItemController@cari');
 
 Route::get('/editprofile/{id}', 'UserController@edit');
 Route::put('/editprofile/update/{id}', 'UserController@update');

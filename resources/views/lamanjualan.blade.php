@@ -144,6 +144,7 @@
   <!--================Data Jual=====================-->
 
   <section >
+    @if(count($item)>0)
   <div id="example1" class="row">
         @foreach($item->all() as $i)
         
@@ -173,6 +174,9 @@
         @endforeach  
       
     </div>
+    @else
+      <h1> No item </h1>
+    @endif
     <!----=========================================================-->
     
                     </section>
